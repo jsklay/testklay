@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+</head>
+<body>
+    <h3>사용하는 지갑주소(Kas)</h3>
+    <input id = 'wallet_from' onchange="printWalletFrom()"/>
+    <div id="wallet_from_result"></div>
+
+    <h3>민팅 컨트랙트(민팅할 nft 컨트랙트) --> [혹은 보낼주소]</h3>
+    <input id = 'contract' onchange ='printContract()'/>
+    <div id="contract_result"></div>
+
+    <h3>kas키값(BASIC 64 key값)</h3>
+    <input id ='wallet_auth' onchange="printWalletAuth()"/>
+    <div id="wallet_auth_result"></div>
+
+    <h3>실행 블록</h3>
+    <input type="number" id="wallet_start" onchange="printWalletStart()"/>
+    <div id="wallet_start_result"></div>
+
+    <h3>NFT민팅에 쓸 클레이(1개당 가격 x 구매할 갯수)</h3>
+    <input type="number" id="wallet_value" onchange="printWalletValue()"/>
+    <div id="wallet_value_result"></div>
+
+    <h3>NFT구매할 갯수(컨트랙에서 구매가능한 최대 갯수 이내)</h3>
+    <input type="number" min="1" max="9" step="1" id="wallet_num" onchange="printWalletNum()" />
+    <div id="wallet_num_result"></div>
+
+    <div>
+        <button onclick="MINT()">MINT실행(테스트)</button>
+    </div>
+    <div>
+        <button onclick="MINT_LEGACY()">MINT 실행(레거시방식)</button>
+    </div>
+    <div>
+        <button onclick="MINT_100()">민팅 여러번실행</button>
+    </div>
+    <div>
+        <button onclick="TIME_MINT()">예약된 블록에 민팅실행</button>
+    </div>
+    <div>
+        <button onclick="KLAY_SEND()">클레이 전송하기</button>
+    </div>
+
+    <h2 id="block"></h2>
+    <h2 id="transcation"></h2>
+
+    <script src="inputData.js"></script>
+    <script src="klayBlock.js"></script>
+    <sciprt src="klaySend.js"></sciprt>
+    <script src="klayMint.js"></script>
+
+
+</body>
+</html>
